@@ -1,0 +1,357 @@
+
+/*---------CSS--------------*/
+
+
+/* Propiedad : valor ; */
+
+
+/* SELECTORES */
+
+h1  /* Selección por elemento */
+.h1 /* Selección por clase */
+#h1 /* Selección por ID */
+*{} /* Selector universal */
+
+/* COLORES */
+
+R G B A 
+0-255 0-255 0-255 Transparencia
+00    ff    00
+
+/* MEDIDAS */
+
+/* Absolutas */
+1px 
+cm
+width:100vw /* Ocupa todo ancho el contenido y elimina le scroll si se aplica box-sizing */
+height:100vh
+
+
+/* Medidas Relavitas con respecto al contenedor padre*/
+1%
+1em 
+1rem
+
+/* PROPIEDADES DE TEXTO */
+
+color:        /* Color */
+font-size   : /* Tamaño */
+font-family : tipografía1, tipografía2 ; /* Tipografia 16px por defecto */
+font-weigth : bold | bolder; /* Negrita | Mas Negrita - Rango 100-900 */
+font-style  : italic | obligue | none; /* Cursiva */
+
+text-transform : uppercase | lowercase | capitalize ; /* Mayuscula | Minuscula | 1er Letra Mayus */
+text-decoration: underline | overline  | line-through | none; /* Tipos de subrayados y tachado */
+text-ident: 20px; /* Sangria */
+text-shadown : 10px 10px 10px black; /* x y distancia color - Sombra de texto */
+text-aling : center | justify | left | rigth; /* Alinea el texto en su contenedor */
+
+word-spacing:            /* Espacio entre palabras - hola  como  estas */
+letter-spacing:          /* Espacio entre letras - h o l a  c o m o  e s t a s */
+line-heigth :            /* Distancia entre lineas */
+
+/* PROPIEDADES DE CAJAS */
+
+ 
+background-color: blue ; /* Poner color de fondo */
+background-image: url(img.jpg); /* Poner una imagen de fonde en el contenedor */
+background-size: 100% | contain | cover; /* Ajusta la img al contenedor por lo menos una vez | No repite la img */
+background-position: center | top | left | rigth;
+background-repeat: no-repeat; /* No repite la img en ninguna dirección */
+background-attachment: scroll | local | fixed; /* Queda la img fija para scrollear */
+background : image position / size repeat attachment color /* Convinacion de todas las propiedades */
+
+background: linear-gradient (transparent,color); /* hacer un gradiente transparente con un color */
+background: linear-gradient (to top | rigth | bottom | left, transparent,color); /* Poner la sombra del gradiente en distintas direcciones */
+
+width   : 20px;
+heigth  : 30px;
+
+padding : 10px;
+padding : 10px 10px; /* x , y */
+padding : 10px 10px 10px 10px;
+
+padding-top:  10px;
+padding-rigth:  10px;
+padding-bottom: 10px;
+padding-left: 10px;  
+
+margin : 10px;
+margin : 10px 10px;
+margin : 10px 10px 10px 10px;
+
+margin-top:  10px;
+margin-rigth:  10px;
+margin-bottom: 10px;
+margin-left: 10px;  
+
+border  : 5px solid red;
+
+border-width: 5px;
+border-style: solid;
+border-color: red;
+
+border-top:    5px;
+border-rigth:  5px;
+border-bottom: 5px;
+boerder-left:  5px;  
+
+border-top-width :
+border-rigth-width :
+border-bottom-width :
+border-left-width :
+
+border-radius: 2px | 50%;
+border-top-radius: 2px;
+
+outline : 5px solid red; /* Parecido al border pero no ocupa el espacio */
+outline-width: 5px;
+outline-style: solid;
+outline-color: red;
+outline-offset: 10px; /* Separa del border creo */
+
+box-shadow: 0  0 40px 0 #007  /* x, y, desenfoque, expancion - Sombra de la caja */
+box-sizing: content-box | border-box /* default suma el padding y border al width y heigth | no suma, se ajusta, matiene el tamaño cuando modifico el padding y el border */
+filter: drop-shadow : 0  0 40px 0 #007  /* Para dar sombras a imagenes png sin fondos */
+opacity : .5
+
+overflow:   visible | hidden | scroll | auto;  /* Desbordamiento de texto, sale del contenedor */
+overflow-x: visible | hidden | scroll | auto;
+overflow-y: visible | hidden | scroll | auto;
+
+
+objetc-fit: contain | cover | scale-down | none  /* Propiedad para adpatar imagen o videos en un contenedor */
+object-position: top | left | bottom | rigth | px ;
+
+
+list-style: none | square /* ninguno | cuadrado */
+list-style-image: url("img.png"); /* Poner imagenes en la lista como iconos */ 
+visibilit: hidden | none ; /* Oculto | Desaparece */
+
+
+/* Metodología BEM */
+<div class="container">  /* Doy estilo al contenedor */
+    <div class="container__item" >hola</div> /* Doy un solo estilo a todos los divs */
+    <div class="container__item" >hola</div>
+    <div class="container__item select" >hola2</div> /* Puedo dar un estilo a este div en especial */
+</div>
+
+
+
+/* PSEUDOCLASES */
+
+h1:hover { /* Se aplica los cambios al pasar el mouse */
+background-color:blue;
+}
+
+h1:active {  /* Se aplica los cambios al dar click */
+background-color:blue;
+}
+
+li:first-child { /* Se aplica a la seleccion del primer elemento */
+color: blue;
+}
+
+li:last-child { /* Se aplica a la seleccion del ultimo elemento */
+color: blue;
+}
+
+li:nth-child(2) { /* Se aplica a la selecion a los elementos intermedios se pone el numero del elemento que quiere ser afectado */
+color: blue;
+}
+
+li:nth-child(n2) { /* Se aplica a un elemento si, un elemento no y asi va en dos en dos */
+color: blue;
+}
+
+
+/* PSEUDOELEMENTOS */ /* Permite dar estilos a elementos especificos existen 10 en total */
+
+h1::first-letter { /* Selecciona la primer letra para dar estilos */
+} 
+
+div::first-line { /* Selecciona la primer linea para dar estilos de texto en el contenedor */
+}
+
+input::placeholder { /* Se selecciona el placeholder del input para dar estidlos */
+}
+
+li:: marker
+
+li:: before
+
+li:: after
+
+/* POSICION DE ELEMENTOS */
+
+position : static | fixed | relative | absolute;
+top: 
+rigth:
+bottom:
+left:
+z-index: /* Se superpone sobre los otros elementos sobre el eje Z */
+
+/* relative : Mantiende el espacio del objeto que se mueve y se posiciona con respecto al body ya que este es el padre
+   absolute : No mantiene, se posiciona con respecto al contenedor padre si este tiene position relative */
+
+/* DISPLAY */
+
+display:block ;
+display:inline:
+display:inline-block ; /* Los elementos en bloque se comportan como en linea, sirve tanto para elementos en linea como en bloque */
+
+/* FLEX-BOX */
+
+/* Propiedades de contenedores */
+
+display: flex; /* Se le aplica a los elementos padres y se convierten en cajas flexibles */
+flex-direction: row | row-reverse | column | column-reverse; /* Define la dirección de los elementos, filas o columnas */
+flex-wrap: nowrap | wrap | wrap-reverse; /* Ubica los elementos hacia abajo al achicar la ventana */
+flex-flow: row wrap | column wrap ; /* Unifica las dos propiedades flex-direction y flex-wrap */
+justify-content : start | end | center | space-between | space-around | space-evently; /* Alina los items en el eje al - inicio | final | centro | separa un espacio entre ellos | deja un margen igual para cada elemento | deja un margen exactamente igual en para cada elemento */
+align-items: start | end | center | stretch | baseline; /* Alinea pocos intems al centro */
+align-content: start | end | center | stretch | space-between | space-around /* Alinea muchos intems al centro */
+aling-self: start | end | center |
+gap: px; /* Es la separacion entre elementos es como el margin pero para flex */ 
+
+/* Propiedades de Items */
+
+order: 1 ; /* Permite cambiar el orden de un elemento */
+
+flex-basis: auto /* Tamaño minimo base */
+flex-shrink: 1; /* Encoje el elemento */ 
+flex-grow: 0; /* Crece el elmento */
+
+flex: 0 1 auto; /* Resume las tres propiedades anteriores */
+
+
+
+/* RESPONSIVE DESIGN */
+
+max-width: ;
+min-width: ;
+max-heigth: ;
+min-heigth: ;
+
+.img {  /* Para adaptar una imagen a distintos dispositivos */
+    max-width: 100%; 
+    heigth: auto ;
+}
+
+.container { /* Para adaptar un video a distintos dispositivos */
+    max-width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.video {
+    max-width: 100%;
+}
+
+
+/* Media Queries */
+
+@media print | screen
+
+@media screen and (max-width:500px){
+      body {
+         font-size :30px;
+      {
+}
+
+/* Container Queries */
+
+
+.container {
+   container-type: inline-size | size ;   /* Definimos el tipo de contenedor al cual vamos a aplicar  */
+}
+
+@container (max-width: 500px){
+      
+      p {
+         font-size:20px; /* Afecta el cambio a los elementos dentro del contenedor en este ejemplo <p> */
+      } 
+}
+
+/* Podemos aplicar a un unico contenedor definiendo un nombre */
+
+.container {
+   container-type: inline-size | size ;
+   container-name: main   /* En este caso aplicamos al contenedor llamado "main" */
+}
+
+@container main (max-width: 500px){
+      
+      p {
+         font-size:20px; 
+      } 
+}
+
+
+
+inline-size /* Solo tiene encuentra los en linea */
+size        /* Tiene encuenta los enbloque y en linea */
+
+/* TRANSICIONES */
+
+color: red;
+transition-property: background-color, color; /* propiedad a la cual va afectar la transicion */
+transition-duration: 1s; /* tiempo en que dura la transicion */
+transition-delay: 3s; /* Tiempo en que arranca la transición */
+transition: linear | ease | ease-in | ease-in-out | steps(int, start|end) | initial | inherit; /* Tipo de formas de transiciones */
+position:relative;
+left:0;               /* se posiciona en 0 */
+
+:hover
+background-color:white
+color: blue;
+left: 400px          /* De cero se mueve 400px hacia la derecha */
+
+
+transition: propiedad duracion tipo linar o steps(n) o otro;
+
+/* ANIMACIONES */
+
+animation-name: movimiento; /* Nombre de la animación */
+animation-duration: 1s;     /* Tiempo en que dura la animación */
+animation-deleay: 3s;       /* Tiempo en que arranca la animación */
+animation-fill-mode: both;
+animation-direction: alternate | reverse ;
+animation-timing-function:linear | ease | ease-in | ease-in-out | steps(int, start|end) | initial | inherit; /* Distintas formas de animaciones */
+animation-iteration-count: 2 | infinite ; /* Cuenta la cantidad de veces que se repite */
+
+@keyframes movimiento {
+
+  from {         /* INICIO */
+      width:0%   /* propiedad a la cual va afectar la transicion */
+  }
+  
+  to {            /* FIN */
+      width:100%; /* propiedad a la cual va afectar la transicion */
+  }
+}
+
+
+@keyframes movimiento {
+
+  0% {         /* INICIO */
+      width:0%   /* propiedad a la cual va afectar la transicion */
+  }
+  
+  10% {            
+      width:10%; 
+  }
+  
+  30% {            
+      width:50%; 
+  }
+  
+  100% {             /* FIN */
+      width:100%; 
+  }
+}
+
+<span></span> Selecciona una parte especifica
+
+
+
+
