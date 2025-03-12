@@ -12,11 +12,19 @@ h1  /* Selección por elemento */
 #h1 /* Selección por ID */
 *{} /* Selector universal */
 
+/* Metodología BEM */
+
+<div class="container">  /* Doy estilo al contenedor */
+    <div class="container__item" >hola</div> /* Doy un solo estilo a todos los divs */
+    <div class="container__item" >hola</div>
+    <div class="container__item select" >hola2</div> /* Puedo dar un estilo a este div en especial */
+</div>
+
 /* COLORES */
 
 R G B A 
 0-255 0-255 0-255 Transparencia
-00    ff    00
+#00    ff    00
 
 /* MEDIDAS */
 
@@ -54,15 +62,7 @@ line-heigth :            /* Distancia entre lineas */
 
  
 background-color: blue ; /* Poner color de fondo */
-background-image: url(img.jpg); /* Poner una imagen de fonde en el contenedor */
-background-size: 100% | contain | cover; /* Ajusta la img al contenedor por lo menos una vez | No repite la img */
-background-position: center | top | left | rigth;
-background-repeat: no-repeat; /* No repite la img en ninguna dirección */
-background-attachment: scroll | local | fixed; /* Queda la img fija para scrollear */
-background : image position / size repeat attachment color /* Convinacion de todas las propiedades */
 
-background: linear-gradient (transparent,color); /* hacer un gradiente transparente con un color */
-background: linear-gradient (to top | rigth | bottom | left, transparent,color); /* Poner la sombra del gradiente en distintas direcciones */
 
 width   : 20px;
 heigth  : 30px;
@@ -115,6 +115,7 @@ box-sizing: content-box | border-box /* default suma el padding y border al widt
 filter: drop-shadow : 0  0 40px 0 #007  /* Para dar sombras a imagenes png sin fondos */
 opacity : .5
 
+
 overflow:   visible | hidden | scroll | auto;  /* Desbordamiento de texto, sale del contenedor */
 overflow-x: visible | hidden | scroll | auto;
 overflow-y: visible | hidden | scroll | auto;
@@ -128,14 +129,30 @@ list-style: none | square /* ninguno | cuadrado */
 list-style-image: url("img.png"); /* Poner imagenes en la lista como iconos */ 
 visibilit: hidden | none ; /* Oculto | Desaparece */
 
+/* BACKGROUND */
 
-/* Metodología BEM */
-<div class="container">  /* Doy estilo al contenedor */
-    <div class="container__item" >hola</div> /* Doy un solo estilo a todos los divs */
-    <div class="container__item" >hola</div>
-    <div class="container__item select" >hola2</div> /* Puedo dar un estilo a este div en especial */
-</div>
+background-image: url(img.jpg); /* Poner una imagen de fonde en el contenedor */
+background-size: 100% | contain | cover; /* Ajusta la img al contenedor por lo menos una vez | No repite la img */
+background-position: center | top | left | rigth;
+background-repeat: no-repeat; /* No repite la img en ninguna dirección */
+background-attachment: scroll | local | fixed; /* Queda la img fija para scrollear */
+background : image position / size repeat attachment color /* Convinacion de todas las propiedades */
 
+background: linear-gradient (transparent,color); /* hacer un gradiente transparente con un color */
+background: linear-gradient (to top | rigth | bottom | left, transparent,color); /* Poner la sombra del gradiente en distintas direcciones */
+
+
+/* FILTER */
+
+filter: drop-shadow (0px 0px 15px back); /* Aplicar sombra a un container o imagen por dentro */
+filter: blur(px); /* Desenfocar */
+filter: brightness(0-10); /* Brillo */
+filter: contrast(0-10|%); /* Contraste */
+filter: grayscale(0-10|%) /* Escala de grises */
+filter: saturate(0-10|%) /* Saturacion */
+filter: hue-rotate(deg) /* Rota los colores o cambia la tonalidad de colores */
+filter: invert(0-10|%);  /* Invierte los colores */
+filter: sepia(0-10|%); 
 
 
 /* PSEUDOCLASES */
@@ -165,7 +182,7 @@ color: blue;
 }
 
 
-/* PSEUDOELEMENTOS */ /* Permite dar estilos a elementos especificos existen 10 en total */
+/* PSEUDOELEMENTOS */ /* Permite SELECCIONAR dar estilos a elementos especificos existen 10 en total */
 
 h1::first-letter { /* Selecciona la primer letra para dar estilos */
 } 
@@ -173,14 +190,23 @@ h1::first-letter { /* Selecciona la primer letra para dar estilos */
 div::first-line { /* Selecciona la primer linea para dar estilos de texto en el contenedor */
 }
 
-input::placeholder { /* Se selecciona el placeholder del input para dar estidlos */
+input::placeholder { /* Se selecciona el placeholder del input para dar estilos */
 }
 
-li:: marker
+p:: selection /* Se puede cambiar el color del texto o elemento seleccionado */
 
-li:: before
+li:: before {  /* Permite escribir un texto antes y darle propiedades */
 
-li:: after
+     content: 'Escribo un texto antes'
+     color: blue;
+}
+
+li:: after {  /* Permite escribir un texto después y darle propiedades */
+
+     content: 'Escribo un texto después'
+     color: red;
+}
+
 
 /* POSICION DE ELEMENTOS */
 
@@ -193,6 +219,7 @@ z-index: /* Se superpone sobre los otros elementos sobre el eje Z */
 
 /* relative : Mantiende el espacio del objeto que se mueve y se posiciona con respecto al body ya que este es el padre
    absolute : No mantiene, se posiciona con respecto al contenedor padre si este tiene position relative */
+
 
 /* DISPLAY */
 
@@ -291,6 +318,27 @@ min-heigth: ;
 inline-size /* Solo tiene encuentra los en linea */
 size        /* Tiene encuenta los enbloque y en linea */
 
+/* TRANSFORM */
+
+transform: translate(X,Y); /* Se traslada el elemento en el eje X e Y */
+
+transform: translateX(px|%); /* Se traslada el elemento en el eje X */
+
+transform: translateY(px|%); /* Se traslada el elemento en el eje Y */
+
+transform: scaleX(1-10); /* Crece la escala del elemento */
+
+transform: scaleY(1-10); /* Crece la escala del elemento */
+
+transform: skew(deg); /* Inclina el elemento en diagonal */
+
+transform: skewX(deg); /* Inclina el elemento en diagonal en el eje X */
+
+transform: skewY(deg); /* Inclina el elemento en diagonal en el eje Y */
+
+transform: rotate(deg); /* Rota el elemento en grados*/
+
+
 /* TRANSICIONES */
 
 color: red;
@@ -309,12 +357,13 @@ left: 400px          /* De cero se mueve 400px hacia la derecha */
 
 transition: propiedad duracion tipo linar o steps(n) o otro;
 
+
 /* ANIMACIONES */
 
 animation-name: movimiento; /* Nombre de la animación */
 animation-duration: 1s;     /* Tiempo en que dura la animación */
 animation-deleay: 3s;       /* Tiempo en que arranca la animación */
-animation-fill-mode: both;
+animation-fill-mode: none | forwards| backwards | both | initial | inehrit ;
 animation-direction: alternate | reverse ;
 animation-timing-function:linear | ease | ease-in | ease-in-out | steps(int, start|end) | initial | inherit; /* Distintas formas de animaciones */
 animation-iteration-count: 2 | infinite ; /* Cuenta la cantidad de veces que se repite */
@@ -350,7 +399,9 @@ animation-iteration-count: 2 | infinite ; /* Cuenta la cantidad de veces que se 
   }
 }
 
-<span></span> Selecciona una parte especifica
+
+
+
 
 
 
